@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0FAFA"
+    android:padding="24dp">
+
+    <!-- 로고 -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="293dp"
+        android:layout_height="288dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="앱 로고"
+        android:src="@drawable/eartest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 텍스트 생략 가능 (제목) -->
+    <!--
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이어폰 추천 테스트"
+        android:textSize="20sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="32dp"/>
+    -->
+
+    <!-- 이어폰 리스트 버튼 -->
+    <Button
+        android:id="@+id/btnEarphoneList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="추천 이어폰 리스트"
+        android:textAllCaps="false"
+        android:textSize="25sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00BFA6"
+        android:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="16dp"
+        android:padding="18dp"
+        android:background="@drawable/rounded_mint_button"/>
+
+    <!-- 테스트 시작 버튼 -->
+    <Button
+        android:id="@+id/btnStartTest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="테스트 시작"
+        android:textAllCaps="false"
+        android:textSize="25sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00ACC1"
+        android:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/btnEarphoneList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginHorizontal="16dp"
+        android:padding="18dp"
+        android:background="@drawable/rounded_cyan_button"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

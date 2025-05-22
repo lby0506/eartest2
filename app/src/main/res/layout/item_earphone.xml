@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#EEEEEE"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp">
+
+    <!-- 이어폰 이름 -->
+    <TextView
+        android:id="@+id/earphoneName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AirPods Pro 2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <!-- 브랜드명 및 간단정보 -->
+    <TextView
+        android:id="@+id/earphoneBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apple / 커널형 / NCgood / AAC / 30만원대"
+        android:textSize="14sp"
+        android:textColor="#555555"
+        android:layout_marginTop="4dp" />
+
+    <!-- 링크 안내 텍스트 -->
+    <TextView
+        android:id="@+id/earphoneInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="네이버 최저가 보러가기"
+        android:textSize="14sp"
+        android:textColor="#0077CC"
+        android:layout_marginTop="6dp" />
+</LinearLayout>

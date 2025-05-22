@@ -1,0 +1,668 @@
+{
+  "earbuds":[
+    {
+      "id": "e1",
+      "name": "AirPods Pro 2",
+      "brand": "Apple",
+      "features": ["inear","AAC","NCgood","30","stem"]
+    },
+    {
+      "id": "e2",
+      "name": "beats studio buds+",
+      "brand": "beats",
+      "features": ["inear","AAC","NCmid","20","bean"]
+    },
+    {
+      "id": "e3",
+      "name": "beats solo buds",
+      "brand": "beats",
+      "features": ["inear","AAC","NCX","10","bean"]
+    },
+    {
+      "id": "e4",
+      "name": "beats fit pro",
+      "brand": "beats",
+      "features": ["inear","AAC","NCmid","20","bean"]
+    },
+    {
+      "id": "e5",
+      "name": "power beats pro",
+      "brand": "beats",
+      "features": ["inear","AAC","NCgood","30","bean"]
+    },
+    {
+      "id": "e6",
+      "name": "Galaxy Buds 2 pro",
+      "brand": "Samsung",
+      "features": ["inear","SSC","NCmid","10","bean"]
+    },
+    {
+      "id": "e7",
+      "name": "Galaxy Buds 3 pro",
+      "brand": "Samsung",
+      "features": ["inear","SSC","NCgood","20","stem"]
+    },
+    {
+      "id": "e8",
+      "name": "Galaxy Buds FE",
+      "brand": "Samsung",
+      "features": ["inear","SSC","NCmid","5","bean"]
+    },
+    {
+      "id": "e9",
+      "name": "AKG N5 Hybrid",
+      "brand": "AKG",
+      "features": ["inear","LDAC","AAC","NCgood","20","stem"]
+    },
+    {
+      "id": "e10",
+      "name": "JBL TOUR PRO 3",
+      "brand": "JBL",
+      "features": ["inear","LDAC","AAC","NCgood","30","stem"]
+    },
+    {
+      "id": "e11",
+      "name": "JBL TOUR PRO 2",
+      "brand": "JBL",
+      "features": ["inear","AAC","NCgood","10","stem"]
+    },
+    {
+      "id": "e12",
+      "name": "JBL LIVE BEAM 3",
+      "brand": "JBL",
+      "features": ["inear","LDAC","AAC","NCmid","20","stem"]
+    },
+    {
+      "id": "e13",
+      "name": "JBL LIVE BUDS 3",
+      "brand": "JBL",
+      "features": ["inear","LDAC","AAC","NCgood","20","bean"]
+    },
+    {
+      "id": "e14",
+      "name": "JBL LIVE PRO 2",
+      "brand": "JBL",
+      "features": ["inear","AAC","NCgood","10","stem"]
+    },
+    {
+      "id": "e15",
+      "name": "JBL TUNE BEAM 2",
+      "brand": "JBL",
+      "features": ["inear","AAC","NCbad","10","stem"]
+    },
+    {
+      "id": "e16",
+      "name": "JBL TUNE BUDS 2",
+      "brand": "JBL",
+      "features": ["inear","AAC","NCmid","10","bean"]
+    },
+    {
+      "id": "e17",
+      "name": "JBL WAVE BEAM 2",
+      "brand": "JBL",
+      "features": ["inear","AAC","NCbad","5","stem"]
+    },
+    {
+      "id": "e18",
+      "name": "JBL WAVE BUDS 2",
+      "brand": "JBL",
+      "features": ["inear","AAC","NCbad","5","bean"]
+    },
+    {
+      "id": "e19",
+      "name": "BOSE QC ULTRA",
+      "brand": "BOSE",
+      "features": ["inear","APTX-adaptive","AAC","NCgood","30","stem"]
+    },
+    {
+      "id": "e20",
+      "name": "BOSE Quiet Comfort Earbuds",
+      "brand": "BOSE",
+      "features": ["inear","AAC","NCgood","20","bean"]
+    },
+    {
+      "id": "e21",
+      "name": "Sennhiser ATW 1",
+      "brand": "Sennhiser",
+      "features": ["inear","AAC","NCmid","10","bean"]
+    },
+    {
+      "id": "e22",
+      "name": "Sennhiser MTW 4",
+      "brand": "Sennhiser",
+      "features": ["inear","APTX-Loseless","AAC","NCmid","20","bean"]
+    },
+    {
+      "id": "e23",
+      "name": "Sony WF-1000XM5",
+      "brand": "Sony",
+      "features": ["inear","LDAC","AAC","NCgood","30","bean"]
+    },
+    {
+      "id": "e24",
+      "name": "Sony Linkbuds Fit",
+      "brand": "Sony",
+      "features": ["inear","LDAC","AAC","NCbad","20","bean"]
+    },
+    {
+      "id": "e25",
+      "name": "Sony Linkbuds S",
+      "brand": "Sony",
+      "features": ["inear","LDAC","AAC","NCgood","20","bean"]
+    },
+    {
+      "id": "e26",
+      "name": "Sony WF-C710N",
+      "brand": "Sony",
+      "features": ["inear","AAC","NCmid","10","bean"]
+    },
+    {
+      "id": "e27",
+      "name": "Sony WF-C510",
+      "brand": "Sony",
+      "features": ["inear","AAC","NCX","5","bean"]
+    },
+    {
+      "id": "e28",
+      "name": "Anker soundcore A40",
+      "brand": "Anker",
+      "features": ["inear","LDAC","AAC","NCmid","10","bean"]
+    },
+    {
+      "id": "e29",
+      "name": "Anker soundcore Liberty 4NC",
+      "brand": "Anker",
+      "features": ["inear","LDAC","AAC","NCmid","10","stem"]
+    },
+    {
+      "id": "e30",
+      "name": "Anker Liberty 4 pro",
+      "brand": "Anker",
+      "features": ["inear","LDAC","AAC","NCgood","10","stem"]
+    },
+    {
+      "id": "e31",
+      "name": "Anker soundcore P30i",
+      "brand": "Anker",
+      "features": ["inear","AAC","NCbad","1","stem"]
+    },
+    {
+      "id": "e32",
+      "name": "Anker soundcore P40i",
+      "brand": "Anker",
+      "features": ["inear","AAC","NCbad","5","stem"]
+    },
+    {
+      "id": "e33",
+      "name": "Anker soundcore A30i",
+      "brand": "Anker",
+      "features": ["inear","AAC","NCbad","5","bean"]
+    },
+    {
+      "id": "e34",
+      "name": "Audio-Technica CKS30TW+",
+      "brand": "Audio-Technica",
+      "features": ["inear","AAC","NCbad","10","bean"]
+    },
+    {
+      "id": "e35",
+      "name": "Audio-Technica CKS50TW2",
+      "brand": "Audio-Technica",
+      "features": ["inear","AAC","NCmid","20","bean"]
+    },
+    {
+      "id": "e36",
+      "name": "Audio-Technica TWX7",
+      "brand": "Audio-Technica",
+      "features": ["inear","LDAC","AAC","NCmid","20","stem"]
+    },
+    {
+      "id": "e37",
+      "name": "Audio-Technica TWX9",
+      "brand": "Audio-Technica",
+      "features": ["inear","APTX-adaptive","AAC","NCbad","20","stem"]
+    },
+    {
+      "id": "e38",
+      "name": "Nothing ear (2024)",
+      "brand": "Nothing",
+      "features": ["inear","LDAC","AAC","NCgood","10","stem"]
+    },
+    {
+      "id": "e39",
+      "name": "Nothing ear (a)",
+      "brand": "Nothing",
+      "features": ["inear","LDAC","AAC","NCmid","10","stem"]
+    },
+    {
+      "id": "e40",
+      "name": "CMF Buds",
+      "brand": "CMF",
+      "features": ["inear","AAC","NCbad","1","stem"]
+    },
+    {
+      "id": "e41",
+      "name": "CMF Buds pro",
+      "brand": "CMF",
+      "features": ["inear","AAC","NCbad","5","stem"]
+    },
+    {
+      "id": "e42",
+      "name": "CMF Buds 2 pro",
+      "brand": "CMF",
+      "features": ["inear","LDAC","AAC","NCmid","5","stem"]
+    },
+    {
+      "id": "e43",
+      "name": "B&O Beoplay EX",
+      "brand": "Bang & Olufsen",
+      "features": ["inear","APTX-Adaptive","AAC","NCmid","30","stem"]
+    },
+    {
+      "id": "e44",
+      "name": "B&O Beoplay E11",
+      "brand": "Bang & Olufsen",
+      "features": ["inear","APTX-Adaptive","AAC","NCgood","50","stem"]
+    },
+    {
+      "id": "e45",
+      "name": "B&W Pi7 S2",
+      "brand": "Bowers & Wilkins",
+      "features": ["inear","APTX-Adaptive","AAC","NCmid","30","bean"]
+    },
+    {
+      "id": "e46",
+      "name": "B&W Pi8",
+      "brand": "Bowers & Wilkins",
+      "features": ["inear","APTX-Loseless","AAC","NCmid","50","bean"]
+    },
+    {
+      "id": "e47",
+      "name": "B&W Pi6",
+      "brand": "Bowers & Wilkins",
+      "features": ["inear","APTX-Adaptive","AAC","NCmid","30","bean"]
+    },
+    {
+      "id": "e48",
+      "name": "QCY HT08",
+      "brand": "QCY",
+      "features": ["inear","LDAC","AAC","NCmid","1","stem"]
+    },
+    {
+      "id": "e49",
+      "name": "QCY T13",
+      "brand": "QCY",
+      "features": ["inear","AAC","NCbad","1","stem"]
+    },
+    {
+      "id": "e50",
+      "name": "Xiaomi Redmi Buds 5 pro",
+      "brand": "Xiaomi",
+      "features": ["inear","LDAC","AAC","NCmid","5","stem"]
+    },
+    {
+      "id": "e51",
+      "name": "Xiaomi Redmi Buds 6 Lite",
+      "brand": "Xiaomi",
+      "features": ["inear","AAC","NCbad","1","stem"]
+    },
+    {
+      "id": "e52",
+      "name": "Xiaomi Redmi Buds 6 pro",
+      "brand": "Xiaomi",
+      "features": ["inear","LDAC","AAC","NCmid","5","stem"]
+    },
+    {
+      "id": "e53",
+      "name": "Phiaton BonoBuds",
+      "brand": "Phiaton",
+      "features": ["inear","AAC","NCbad","5","bean"]
+    },
+    {
+      "id": "e54",
+      "name": "Phiaton BonoBuds Lite",
+      "brand": "Phiaton",
+      "features": ["inear","AAC","NCX","1","bean"]
+    },
+    {
+      "id": "e55",
+      "name": "Phiaton BonoBuds Plus",
+      "brand": "Phiaton",
+      "features": ["inear","APTX-adaptive","AAC","NCmid","10","bean"]
+    },
+    {
+      "id": "e56",
+      "name": "Marshall Motive2",
+      "brand": "Marshall",
+      "features": ["inear","AAC","NCmid","20","stem"]
+    },
+    {
+      "id": "e57",
+      "name": "Baseus Bowie M2s",
+      "brand": "Baseus",
+      "features": ["inear","AAC","NCbad","5","stem"]
+    },
+    {
+      "id": "e58",
+      "name": "Baseus Bowie MA10s",
+      "brand": "Baseus",
+      "features": ["inear","AAC","NCbad","5","bean"]
+    },
+    {
+      "id": "e59",
+      "name": "Baseus Bowie 35",
+      "brand": "Baseus",
+      "features": ["inear","AAC","NCbad","5","stem"]
+    },
+    {
+      "id": "e60",
+      "name": "Poly Voyager Free 60",
+      "brand": "Poly",
+      "features": ["inear","APTX","NCmid","10","stem"]
+    },
+    {
+      "id": "e61",
+      "name": "Poly Voyager Free 20",
+      "brand": "Poly",
+      "features": ["inear","APTX","NCmid","10","bean"]
+    },
+    {
+      "id": "e62",
+      "name": "final ZE2000",
+      "brand": "final",
+      "features": ["inear","APTX-adaptive","AAC","NCX","10","bean"]
+    },
+    {
+      "id": "e63",
+      "name": "final ZE3000",
+      "brand": "final",
+      "features": ["inear","APTX-adaptive","AAC","NCX","10","bean"]
+    },
+    {
+      "id": "e64",
+      "name": "final ZE3000 SV",
+      "brand": "final",
+      "features": ["inear","LDAC","AAC","NCbad","10","bean"]
+    },
+    {
+      "id": "e65",
+      "name": "final ZE8000 MK2",
+      "brand": "final",
+      "features": ["inear","APTX-adaptive","AAC","NCmid","30","stem"]
+    },
+    {
+      "id": "e66",
+      "name": "ag COTSUBU MK2+",
+      "brand": "ag",
+      "features": ["inear","AAC","NCX","10","bean"]
+    },
+    {
+      "id": "e67",
+      "name": "ag COTSUBU for ASMR MK2",
+      "brand": "ag",
+      "features": ["inear","APTX","NCX","10","bean"]
+    },
+    {
+      "id": "e68",
+      "name": "LG Tone-UT90Q",
+      "brand": "LG",
+      "features": ["inear", "APTX-adaptive","AAC","NCmid", "10", "stem"]
+    },
+    {
+      "id": "e69",
+      "name": "LG Tone-UT90S",
+      "brand": "LG",
+      "features": ["inear","APTX-adaptive","AAC","NCgood","20","bean"]
+    },
+    {
+      "id": "e70",
+      "name": "LG xboom buds",
+      "brand": "LG",
+      "features": ["inear","AAC","NCmid","10","bean"]
+    },
+    {
+      "id": "e71",
+      "name": "Airpods 3",
+      "brand": "Apple",
+      "features": ["semi-open","AAC","NCX","10","stem"]
+    },
+    {
+      "id": "e72",
+      "name": "Airpods 4",
+      "brand": "Apple",
+      "features": ["semi-open","AAC","NCX","10","stem"]
+    },
+    {
+      "id": "e73",
+      "name": "Airpods 4 anc",
+      "brand": "Apple",
+      "features": ["semi-open","AAC","NCbad","20","stem"]
+    },
+    {
+      "id": "e74",
+      "name": "Galaxy Buds 3",
+      "brand": "Samsung",
+      "features": ["semi-open","SSC","NCbad","5","stem"]
+    },
+    {
+      "id": "e75",
+      "name": "Galaxy Buds Live",
+      "brand": "Samsung",
+      "features": ["semi-open","SSC","NCbad","20","bean"]
+    },
+    {
+      "id": "e76",
+      "name": "Marshall Miner 4",
+      "brand": "Marshall",
+      "features": ["semi-open","AAC","NCX","20","stem"]
+    },
+    {
+      "id": "e77",
+      "name": "QCY HT10",
+      "brand": "QCY",
+      "features": ["semi-open","AAC","NCbad","1","stem"]
+    },
+    {
+      "id": "e78",
+      "name": "Sony Linkbuds Open",
+      "brand": "Sony",
+      "features": ["Semi-open","AAC","NCX","20","bean"]
+    },
+    {
+      "id": "e79",
+      "name": "Soundpeats Air5 Lite",
+      "brand": "Soundpeats",
+      "features": ["semi-open","LDAC","NCX","5","stem"]
+    },
+    {
+      "id": "e80",
+      "name": "BOSE QC ULTRA OPEN EARBUDS",
+      "brand": "BOSE",
+      "features": ["open","AAC","NCX","30","ear-clip"]
+    },
+    {
+      "id": "e81",
+      "name": "QCY C30",
+      "brand": "QCY",
+      "features": ["open","AAC","NCX","1","ear-clip"]
+    },
+    {
+      "id": "e82",
+      "name": "Soundpeats CC Pearl Clip pro",
+      "brand": "Soundpeats",
+      "features": ["open","LDAC","NCX","5","ear-clip"]
+    },
+    {
+      "id": "e83",
+      "name": "SHOKZ Open-Fit Air T511",
+      "brand": "SHOKZ",
+      "features": ["open","AAC","NCX","10","open-ear"]
+    },
+    {
+      "id": "e83",
+      "name": "SHOKZ Open-Fit T910",
+      "brand": "SHOKZ",
+      "features": ["open","AAC","NCX","20","open-ear"]
+    },
+    {
+      "id": "e84",
+      "name": "SHOKZ Open-Fit T920",
+      "brand": "SHOKZ",
+      "features": ["open","AAC","NCbad","20","open-ear"]
+    },
+    {
+      "id": "e85",
+      "name": "TOZO open-buds",
+      "brand": "TOZO",
+      "features": ["open","AAC","NCX","5","open-ear"]
+    },
+    {
+      "id": "e86",
+      "name": "Cleer ARC 2",
+      "brand": "Cleer",
+      "features": ["open","AAC","NCX","10","open-ear"]
+    },
+    {
+      "id": "e87",
+      "name": "Cleer ARC 3",
+      "brand": "Cleer",
+      "features": ["open","LDAC","NCX","20","open-ear"]
+    },
+    {
+      "id": "e88",
+      "name": "QCY T30 Air",
+      "brand": "QCY",
+      "features": ["open","AAC","NCX","1","open-ear"]
+    },
+    {
+      "id": "e89",
+      "name": "Baseus Bowie MC1",
+      "brand": "Baseus",
+      "features": ["open","AAC","NCX","5","ear-clip"]
+    },
+    {
+      "id": "e90",
+      "name": "Baseus Eli Sports 1 PM20A",
+      "brand": "Baseus",
+      "features": ["open","AAC","NCX","5","open-ear"]
+    },
+    {
+      "id": "e91",
+      "name": "DEVIALET GRMINI II",
+      "brand": "DEVIALRT",
+      "features": ["inear","APTX-adaptive","AAC","NCgood","50","bean"]
+    }
+  ],
+  "Q": [
+    {
+      "id": "q1",
+      "question": "어떤 형태의 이어폰을 선호합니까?",
+      "answers": [
+        {
+          "text": "커널형",
+          "filters": ["inear"]
+        },
+        {
+          "text": "세미 오픈형",
+          "filters": ["semi-open"]
+        },
+        {
+          "text": "완전 오픈형",
+          "filters": ["open"]
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "어떤 디자인을 선호합니까?",
+      "answers": [
+        {
+          "text": "콩나물 모양 (커널, 세미 오픈만 해당)",
+          "filters": ["stem"]
+        },
+        {
+          "text": "콩 모양 (커널, 세미 오픈만 해당)",
+          "filters": ["bean"]
+        },
+        {
+          "text": "귀찌 모양 (완전 오픈만 해당)",
+          "filters": ["ear-slip"]
+        },
+        {
+          "text": "귓바퀴에 거는 모양 (완전 오픈만 해당)",
+          "filters": ["open-ear"]
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "노이즈 캔슬링 성능은?",
+      "answers":[
+        {
+          "text" : "없어도 된다",
+          "filters": ["NCX","NCbad","NCmid","NCgood"]
+        },
+        {
+          "text" : "체감만 되도 충분하다",
+          "filters": ["NCbad","NCmid","NCgood"]
+        },
+        {
+          "text": "어느정도는 좋았으면 좋겠다 (커널형만 해당)",
+          "filters": ["NCmid","NCgood"]
+        },
+        {
+          "text": "귀가 먹먹할 정도여야 한다 (커널형만 해당)",
+          "filters": ["NCgood"]
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "고품질 블루투스 코덱에 대해",
+      "answers": [
+        {
+          "text": "잘 모른다",
+          "filters": ["AAC","SSC","LDAC","APTX","APTX-adaptive","APTX-Loseless"]
+        },
+        {
+          "text": "연결성이 중요하다",
+          "filters": ["AAC","SSC"]
+        },
+        {
+          "text": "무조건 음질이 중요하다",
+          "filters": ["APTX-Adaptive","APTX-Loseless","LDAC"]
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "가격은?",
+      "answers":[
+        {
+          "text": "5만원 이하",
+          "filters": ["1"]
+        },
+        {
+          "text": "5~10만",
+          "filters": ["5"]
+        },
+        {
+          "text": "10~20만 (귀찌 모양 해당 X)",
+          "filters": ["10"]
+        },
+        {
+          "text": "20~30만 (세미 오픈,귀찌 모양 해당 X)",
+          "filters": ["20"]
+        },
+        {
+          "text": "30~50만 (세미 오픈,귀에 거는 모양 해당 X)",
+          "filters": ["30"]
+        },
+        {
+          "text": "50이상 (세미 오픈, 완전 오픈 해당 X)",
+          "filters": ["50"]
+        }
+      ]
+    }
+  ]
+}
