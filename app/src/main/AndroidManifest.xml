@@ -37,6 +37,12 @@
         <!-- 질문 화면 -->
         <activity android:name=".QuestionActivity" />
 
+        <!-- ✅ 검색 화면 (추가된 부분) -->
+        <activity android:name=".SearchActivity" />
+
+        <activity android:name=".ResultActivity" />
+
+
     </application>
 
 </manifest>

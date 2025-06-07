@@ -2,11 +2,16 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:background="#F0FAFA">
 
     <LinearLayout
         android:id="@+id/resultLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" />
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 자바 코드에서 이어폰 결과 카드가 여기에 동적으로 추가됨 -->
+
+    </LinearLayout>
 </ScrollView>

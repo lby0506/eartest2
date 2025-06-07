@@ -37,23 +37,21 @@ public class QuestionActivity extends AppCompatActivity {
 
         showQuestion();
 
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int checkedId = radioGroup.getCheckedRadioButtonId();
-                if (checkedId != -1) {
-                    Answer selected = questions.get(currentIndex).answers.get(checkedId);
-                    selectedFilters.addAll(selected.filters);
+        btnNext.setOnClickListener(view -> {
+            int checkedId = radioGroup.getCheckedRadioButtonId();
+            if (checkedId != -1) {
+                RadioButton selectedButton = findViewById(checkedId);
+                Answer selected = (Answer) selectedButton.getTag();
+                selectedFilters.addAll(selected.filters);
 
-                    currentIndex++;
-                    if (currentIndex < questions.size()) {
-                        showQuestion();
-                    } else {
-                        Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
-                        intent.putStringArrayListExtra("filters", new ArrayList<>(selectedFilters));
-                        startActivity(intent);
-                        finish();
-                    }
+                currentIndex++;
+                if (currentIndex < questions.size()) {
+                    showQuestion();
+                } else {
+                    Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
+                    intent.putStringArrayListExtra("filters", new ArrayList<>(selectedFilters));
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
@@ -66,8 +64,10 @@ public class QuestionActivity extends AppCompatActivity {
         radioGroup.removeAllViews();
         for (int i = 0; i < q.answers.size(); i++) {
             RadioButton rb = new RadioButton(this);
-            rb.setId(i); // 인덱스를 그대로 ID로 사용
+            int answerId = View.generateViewId();  // 고유 ID 생성
+            rb.setId(answerId);
             rb.setText(q.answers.get(i).text);
+            rb.setTag(q.answers.get(i));  // Answer 객체를 tag로 저장
             radioGroup.addView(rb);
         }
     }
