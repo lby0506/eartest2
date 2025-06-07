@@ -35,10 +35,24 @@ public class EarphoneListActivity extends AppCompatActivity {
         earphoneListLayout = findViewById(R.id.earphoneListLayout);
         Button btnToggleFavorites = findViewById(R.id.btnToggleFavorites); // 상단 필터 버튼
 
-        // 데이터 로드 & 전체 렌더링
         fullData = JsonLoader.loadJson(this);
-        if (fullData != null) {
-            renderEarbuds(fullData.earbuds);
+        if (fullData == null) return;
+
+        // ✅ 최근 본 이어폰 모드 처리
+        Intent intent = getIntent();
+        String mode = intent.getStringExtra("mode");
+
+        if (mode != null && mode.equals("recent")) {
+            List<String> recentIds = loadRecentlyViewed();
+            List<Earbud> recentList = new ArrayList<>();
+            for (Earbud e : fullData.earbuds) {
+                if (recentIds.contains(e.id)) {
+                    recentList.add(e);
+                }
+            }
+            renderEarbuds(recentList);
+        } else {
+            renderEarbuds(fullData.earbuds); // 기본 전체 목록
         }
 
         // 즐겨찾기 필터 버튼 클릭 이벤트
@@ -62,7 +76,6 @@ public class EarphoneListActivity extends AppCompatActivity {
         });
     }
 
-    // 카드 뷰 그리기 함수
     private void renderEarbuds(List<Earbud> earbuds) {
         earphoneListLayout.removeAllViews();
 
@@ -87,7 +100,9 @@ public class EarphoneListActivity extends AppCompatActivity {
             String keyword = e.name.replace(" ", "+");
             String link = "https://search.shopping.naver.com/search/all?query=" + keyword;
 
+            // ✅ 클릭 시 최근 본 이어폰 저장
             card.setOnClickListener(v -> {
+                saveRecentlyViewed(e.id);
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
                 startActivity(intent);
             });
@@ -110,7 +125,6 @@ public class EarphoneListActivity extends AppCompatActivity {
                     Toast.makeText(this, "즐겨찾기에서 제거됨", Toast.LENGTH_SHORT).show();
                 }
 
-                // 저장
                 List<String> favIds = new ArrayList<>();
                 for (Earbud eb : fullData.earbuds) {
                     if (eb.isFavorite()) {
@@ -119,7 +133,6 @@ public class EarphoneListActivity extends AppCompatActivity {
                 }
                 saveFavorites(favIds);
 
-                // 즐겨찾기만 보기 상태일 때는 필터 유지
                 if (showFavoritesOnly) {
                     List<Earbud> filtered = new ArrayList<>();
                     for (Earbud eb : fullData.earbuds) {
@@ -145,6 +158,53 @@ public class EarphoneListActivity extends AppCompatActivity {
     private List<String> loadFavorites() {
         SharedPreferences prefs = getSharedPreferences("favorites", MODE_PRIVATE);
         String json = prefs.getString("favorite_ids", "[]");
+
+        List<String> list = new ArrayList<>();
+        try {
+            JSONArray array = new JSONArray(json);
+            for (int i = 0; i < array.length(); i++) {
+                list.add(array.getString(i));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    // ✅ 최근 본 이어폰 저장
+    private void saveRecentlyViewed(String id) {
+        SharedPreferences prefs = getSharedPreferences("recent", MODE_PRIVATE);
+        String json = prefs.getString("recent_ids", "[]");
+
+        try {
+            JSONArray array = new JSONArray(json);
+            for (int i = 0; i < array.length(); i++) {
+                if (array.getString(i).equals(id)) {
+                    array.remove(i);
+                    break;
+                }
+            }
+
+            JSONArray newArray = new JSONArray();
+            newArray.put(id);
+            for (int i = 0; i < array.length(); i++) {
+                newArray.put(array.get(i));
+            }
+
+            while (newArray.length() > 10) {
+                newArray.remove(newArray.length() - 1);
+            }
+
+            prefs.edit().putString("recent_ids", newArray.toString()).apply();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // ✅ 최근 본 이어폰 목록 불러오기
+    private List<String> loadRecentlyViewed() {
+        SharedPreferences prefs = getSharedPreferences("recent", MODE_PRIVATE);
+        String json = prefs.getString("recent_ids", "[]");
 
         List<String> list = new ArrayList<>();
         try {

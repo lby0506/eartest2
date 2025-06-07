@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnEarphoneList, btnStartTest, btnSearchActivity;
+    Button btnEarphoneList, btnStartTest, btnSearchActivity, btnRecentViewed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btnEarphoneList = findViewById(R.id.btnEarphoneList);
         btnStartTest = findViewById(R.id.btnStartTest);
         btnSearchActivity = findViewById(R.id.btnSearchActivity);
+        btnRecentViewed = findViewById(R.id.btnRecentViewed); // ✅ 추가된 버튼
 
         btnEarphoneList.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, EarphoneListActivity.class);
@@ -45,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
         btnSearchActivity.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+            startActivity(intent);
+        });
+
+        btnRecentViewed.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, EarphoneListActivity.class);
+            intent.putExtra("mode", "recent"); // ✅ recent 모드 전달
             startActivity(intent);
         });
 

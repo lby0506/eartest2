@@ -11,6 +11,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
+        <!-- 로고 이미지 -->
         <ImageView
             android:id="@+id/logoImage"
             android:layout_width="200dp"
@@ -20,6 +21,7 @@
             android:contentDescription="앱 로고"
             android:src="@drawable/eartest" />
 
+        <!-- 테스트 시작 버튼 -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnStartTest"
             android:layout_width="match_parent"
@@ -32,6 +34,7 @@
             android:layout_marginTop="40dp"
             android:padding="16dp" />
 
+        <!-- 추천 이어폰 리스트 -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnEarphoneList"
             android:layout_width="match_parent"
@@ -44,6 +47,7 @@
             android:layout_marginTop="20dp"
             android:padding="16dp" />
 
+        <!-- 이어폰 검색 -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSearchActivity"
             android:layout_width="match_parent"
@@ -55,6 +59,18 @@
             android:background="@drawable/rounded_button"
             android:layout_marginTop="20dp"
             android:padding="16dp" />
+
+        <!-- 최근 본 이어폰 -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRecentViewed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="최근 본 이어폰"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button"
+            android:layout_marginTop="20dp"
+            android:padding="16dp" />
     </LinearLayout>
 </ScrollView>
-
