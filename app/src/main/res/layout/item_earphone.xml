@@ -33,4 +33,15 @@
         android:textColor="#007AFF"
         android:textSize="14sp"
         android:layout_marginTop="8dp"/>
+
+    <ImageButton
+        android:id="@+id/btnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_heart_outline"
+        android:contentDescription="즐겨찾기" />
+
 </LinearLayout>
