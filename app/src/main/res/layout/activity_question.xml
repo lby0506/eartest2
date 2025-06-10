@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#F9FAFC"
     android:padding="24dp">
 
-    <LinearLayout
+    <!-- 질문 텍스트 -->
+    <TextView
+        android:id="@+id/tvQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:text="질문"
+        android:textSize="20sp"
+        android:textColor="#212121"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="36dp" />
 
-        <!-- 질문 텍스트 -->
-        <TextView
-            android:id="@+id/tvQuestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="질문이 들어갑니다"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#212121"
-            android:layout_marginTop="48dp"
-            android:layout_marginBottom="36dp" />
+    <!-- 선택지 영역 (스크롤 포함) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never">
 
-        <!-- 선택지 영역 -->
         <RadioGroup
             android:id="@+id/radioGroupAnswers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp" />
+    </ScrollView>
 
-        <!-- 다음 버튼 -->
-        <Button
-            android:id="@+id/btnNext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="다음"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="48dp"
-            android:backgroundTint="#00B8D4"
-            android:background="@drawable/rounded_cyan_button"
-            android:padding="14dp" />
-    </LinearLayout>
-</ScrollView>
+    <!-- 다음 버튼 -->
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다음"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#007B8A"
+        android:background="@drawable/rounded_cyan_button"
+        android:padding="16dp" />
+</LinearLayout>

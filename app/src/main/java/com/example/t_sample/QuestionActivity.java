@@ -2,11 +2,7 @@ package com.example.t_sample;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +27,14 @@ public class QuestionActivity extends AppCompatActivity {
         btnNext = findViewById(R.id.btnNext);
 
         EarbudData data = JsonLoader.loadJson(this);
+
+        // ✅ Null 체크 추가 (중요!)
+        if (data == null || data.Q == null || data.Q.isEmpty()) {
+            Toast.makeText(this, "질문 데이터가 없습니다.", Toast.LENGTH_SHORT).show();
+            finish(); // 화면 종료
+            return;
+        }
+
         questions = data.Q;
 
         showQuestion();
@@ -64,10 +68,19 @@ public class QuestionActivity extends AppCompatActivity {
             RadioButton rb = new RadioButton(this);
             rb.setText(q.answers.get(i).text);
             rb.setTextSize(16);
-            rb.setTextColor(getResources().getColor(R.color.black));
-            rb.setButtonTintList(getColorStateList(R.color.teal_700));
-            rb.setPadding(16, 32, 16, 32);
+            rb.setPadding(40, 48, 40, 48);
             rb.setTag(q.answers.get(i));
+            rb.setBackground(getDrawable(R.drawable.card_selector));
+            rb.setTextColor(getResources().getColor(R.color.black));
+            rb.setButtonDrawable(android.R.color.transparent); // 라디오 아이콘 제거
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(0, 16, 0, 0);
+            rb.setLayoutParams(params);
+
             radioGroup.addView(rb);
         }
     }

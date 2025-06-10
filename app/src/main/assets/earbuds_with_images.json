@@ -1,0 +1,372 @@
+{
+  "earbuds": [
+    {
+      "name": "Ag Cotsubu For Asmr Mk2",
+      "image": "ag_cotsubu_for_asmr_mk2.jpg"
+    },
+    {
+      "name": "Ag Cotsubu Mk2Plus",
+      "image": "ag_cotsubu_mk2plus.jpg"
+    },
+    {
+      "name": "Airpods 3",
+      "image": "airpods_3.jpg"
+    },
+    {
+      "name": "Airpods 4",
+      "image": "airpods_4.jpg"
+    },
+    {
+      "name": "Airpods 4 Anc",
+      "image": "airpods_4_anc.jpg"
+    },
+    {
+      "name": "Airpods Pro 2",
+      "image": "airpods_pro_2.jpg"
+    },
+    {
+      "name": "Akg N5 Hybrid",
+      "image": "akg_n5_hybrid.jpg"
+    },
+    {
+      "name": "Anker Liberty 4 Pro",
+      "image": "anker_liberty_4_pro.jpg"
+    },
+    {
+      "name": "Anker Soundcore A30I",
+      "image": "anker_soundcore_a30i.jpg"
+    },
+    {
+      "name": "Anker Soundcore A40",
+      "image": "anker_soundcore_a40.jpg"
+    },
+    {
+      "name": "Anker Soundcore Liberty 4Nc",
+      "image": "anker_soundcore_liberty_4nc.jpg"
+    },
+    {
+      "name": "Anker Soundcore P30I",
+      "image": "anker_soundcore_p30i.jpg"
+    },
+    {
+      "name": "Anker Soundcore P40I",
+      "image": "anker_soundcore_p40i.jpg"
+    },
+    {
+      "name": "Audio-Technica Cks30Twplus",
+      "image": "audio-technica_cks30twplus.jpg"
+    },
+    {
+      "name": "Audio-Technica Cks50Tw2",
+      "image": "audio-technica_cks50tw2.jpg"
+    },
+    {
+      "name": "Audio-Technica Twx7",
+      "image": "audio-technica_twx7.jpg"
+    },
+    {
+      "name": "Audio-Technica Twx9",
+      "image": "audio-technica_twx9.jpg"
+    },
+    {
+      "name": "B&O Beoplay E11",
+      "image": "b&o_beoplay_e11.jpg"
+    },
+    {
+      "name": "B&O Beoplay Ex",
+      "image": "b&o_beoplay_ex.jpg"
+    },
+    {
+      "name": "B&W Pi6",
+      "image": "b&w_pi6.jpg"
+    },
+    {
+      "name": "B&W Pi7 S2",
+      "image": "b&w_pi7_s2.jpg"
+    },
+    {
+      "name": "B&W Pi8",
+      "image": "b&w_pi8.jpg"
+    },
+    {
+      "name": "Baseus Bowie 35",
+      "image": "baseus_bowie_35.jpg"
+    },
+    {
+      "name": "Baseus Bowie M2S",
+      "image": "baseus_bowie_m2s.jpg"
+    },
+    {
+      "name": "Baseus Bowie Ma10S",
+      "image": "baseus_bowie_ma10s.jpg"
+    },
+    {
+      "name": "Baseus Bowie Mc1",
+      "image": "baseus_bowie_mc1.jpg"
+    },
+    {
+      "name": "Baseus Eli Sports 1 Pm20A",
+      "image": "baseus_eli_sports_1_pm20a.jpg"
+    },
+    {
+      "name": "Beats Fit Pro",
+      "image": "beats_fit_pro.jpg"
+    },
+    {
+      "name": "Beats Solo Buds",
+      "image": "beats_solo_buds.jpg"
+    },
+    {
+      "name": "Beats Studio Budsplus",
+      "image": "beats_studio_budsplus.jpg"
+    },
+    {
+      "name": "Bose Qc Ultra",
+      "image": "bose_qc_ultra.jpg"
+    },
+    {
+      "name": "Bose Qc Ultra Open Earbuds",
+      "image": "bose_qc_ultra_open_earbuds.jpg"
+    },
+    {
+      "name": "Bose Quiet Comfort Earbuds",
+      "image": "bose_quiet_comfort_earbuds.jpg"
+    },
+    {
+      "name": "Cleer Arc 2",
+      "image": "cleer_arc_2.jpg"
+    },
+    {
+      "name": "Cleer Arc 3",
+      "image": "cleer_arc_3.jpg"
+    },
+    {
+      "name": "Cmf Buds",
+      "image": "cmf_buds.jpg"
+    },
+    {
+      "name": "Cmf Buds 2 Pro",
+      "image": "cmf_buds_2_pro.jpg"
+    },
+    {
+      "name": "Cmf Buds Pro",
+      "image": "cmf_buds_pro.jpg"
+    },
+    {
+      "name": "Devialet Grmini Ii",
+      "image": "devialet_grmini_ii.jpg"
+    },
+    {
+      "name": "Final Ze2000",
+      "image": "final_ze2000.jpg"
+    },
+    {
+      "name": "Final Ze3000",
+      "image": "final_ze3000.jpg"
+    },
+    {
+      "name": "Final Ze3000 Sv",
+      "image": "final_ze3000_sv.jpg"
+    },
+    {
+      "name": "Final Ze8000 Mk2",
+      "image": "final_ze8000_mk2.jpg"
+    },
+    {
+      "name": "Galaxy Buds 2 Pro",
+      "image": "galaxy_buds_2_pro.jpg"
+    },
+    {
+      "name": "Galaxy Buds 3",
+      "image": "galaxy_buds_3.jpg"
+    },
+    {
+      "name": "Galaxy Buds 3 Pro",
+      "image": "galaxy_buds_3_pro.jpg"
+    },
+    {
+      "name": "Galaxy Buds Fe",
+      "image": "galaxy_buds_fe.jpg"
+    },
+    {
+      "name": "Galaxy Buds Live",
+      "image": "galaxy_buds_live.jpg"
+    },
+    {
+      "name": "Jbl Live Beam 3",
+      "image": "jbl_live_beam_3.jpg"
+    },
+    {
+      "name": "Jbl Live Buds 3",
+      "image": "jbl_live_buds_3.jpg"
+    },
+    {
+      "name": "Jbl Live Pro 2",
+      "image": "jbl_live_pro_2.jpg"
+    },
+    {
+      "name": "Jbl Tour Pro 2",
+      "image": "jbl_tour_pro_2.jpg"
+    },
+    {
+      "name": "Jbl Tour Pro 3",
+      "image": "jbl_tour_pro_3.jpg"
+    },
+    {
+      "name": "Jbl Tune Beam 2",
+      "image": "jbl_tune_beam_2.jpg"
+    },
+    {
+      "name": "Jbl Tune Buds 2",
+      "image": "jbl_tune_buds_2.jpg"
+    },
+    {
+      "name": "Jbl Wave Beam 2",
+      "image": "jbl_wave_beam_2.jpg"
+    },
+    {
+      "name": "Jbl Wave Buds 2",
+      "image": "jbl_wave_buds_2.jpg"
+    },
+    {
+      "name": "Lg Tone-Ut90Q",
+      "image": "lg_tone-ut90q.jpg"
+    },
+    {
+      "name": "Lg Tone-Ut90S",
+      "image": "lg_tone-ut90s.jpg"
+    },
+    {
+      "name": "Lg Xboom Buds",
+      "image": "lg_xboom_buds.jpg"
+    },
+    {
+      "name": "Marshall Miner 4",
+      "image": "marshall_miner_4.jpg"
+    },
+    {
+      "name": "Marshall Motive2",
+      "image": "marshall_motive2.jpg"
+    },
+    {
+      "name": "Nothing Ear (2024)",
+      "image": "nothing_ear_(2024).jpg"
+    },
+    {
+      "name": "Nothing Ear (A)",
+      "image": "nothing_ear_(a).jpg"
+    },
+    {
+      "name": "Phiaton Bonobuds",
+      "image": "phiaton_bonobuds.jpg"
+    },
+    {
+      "name": "Phiaton Bonobuds Lite",
+      "image": "phiaton_bonobuds_lite.jpg"
+    },
+    {
+      "name": "Phiaton Bonobuds Plus",
+      "image": "phiaton_bonobuds_plus.jpg"
+    },
+    {
+      "name": "Poly Voyager Free 20",
+      "image": "poly_voyager_free_20.jpg"
+    },
+    {
+      "name": "Poly Voyager Free 60",
+      "image": "poly_voyager_free_60.jpg"
+    },
+    {
+      "name": "Power Beats Pro",
+      "image": "power_beats_pro.jpg"
+    },
+    {
+      "name": "Qcy C30",
+      "image": "qcy_c30.jpg"
+    },
+    {
+      "name": "Qcy Ht08",
+      "image": "qcy_ht08.jpg"
+    },
+    {
+      "name": "Qcy Ht10",
+      "image": "qcy_ht10.jpg"
+    },
+    {
+      "name": "Qcy T13",
+      "image": "qcy_t13.jpg"
+    },
+    {
+      "name": "Qcy T30 Air",
+      "image": "qcy_t30_air.jpg"
+    },
+    {
+      "name": "Sennhiser Atw 1",
+      "image": "sennhiser_atw_1.jpg"
+    },
+    {
+      "name": "Sennhiser Mtw 4",
+      "image": "sennhiser_mtw_4.jpg"
+    },
+    {
+      "name": "Shokz Open-Fit Air T511",
+      "image": "shokz_open-fit_air_t511.jpg"
+    },
+    {
+      "name": "Shokz Open-Fit T910",
+      "image": "shokz_open-fit_t910.jpg"
+    },
+    {
+      "name": "Shokz Open-Fit T920",
+      "image": "shokz_open-fit_t920.jpg"
+    },
+    {
+      "name": "Sony Linkbuds Fit",
+      "image": "sony_linkbuds_fit.jpg"
+    },
+    {
+      "name": "Sony Linkbuds Open",
+      "image": "sony_linkbuds_open.jpg"
+    },
+    {
+      "name": "Sony Linkbuds S",
+      "image": "sony_linkbuds_s.jpg"
+    },
+    {
+      "name": "Sony Wf-1000Xm5",
+      "image": "sony_wf-1000xm5.jpg"
+    },
+    {
+      "name": "Sony Wf-C510",
+      "image": "sony_wf-c510.jpg"
+    },
+    {
+      "name": "Sony Wf-C710N",
+      "image": "sony_wf-c710n.jpg"
+    },
+    {
+      "name": "Soundpeats Air5 Lite",
+      "image": "soundpeats_air5_lite.jpg"
+    },
+    {
+      "name": "Soundpeats Cc Pearl Clip Pro",
+      "image": "soundpeats_cc_pearl_clip_pro.jpg"
+    },
+    {
+      "name": "Tozo Open-Buds",
+      "image": "tozo_open-buds.jpg"
+    },
+    {
+      "name": "Xiaomi Redmi Buds 5 Pro",
+      "image": "xiaomi_redmi_buds_5_pro.jpg"
+    },
+    {
+      "name": "Xiaomi Redmi Buds 6 Lite",
+      "image": "xiaomi_redmi_buds_6_lite.jpg"
+    },
+    {
+      "name": "Xiaomi Redmi Buds 6 Pro",
+      "image": "xiaomi_redmi_buds_6_pro.jpg"
+    }
+  ]
+}

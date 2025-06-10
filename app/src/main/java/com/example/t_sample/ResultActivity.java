@@ -9,11 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -107,7 +109,6 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     private void addResultCard(Earbud e, boolean isExactMatch) {
-        // 카드 전체 레이아웃
         LinearLayout card = new LinearLayout(this);
         card.setOrientation(LinearLayout.HORIZONTAL);
         card.setPadding(32, 32, 32, 32);
@@ -121,16 +122,20 @@ public class ResultActivity extends AppCompatActivity {
         cardParams.setMargins(0, 0, 0, 32);
         card.setLayoutParams(cardParams);
 
-        // 썸네일 이미지
+        // ✅ 이미지 복사 및 Glide 표시
         ImageView img = new ImageView(this);
         int size = (int) (72 * getResources().getDisplayMetrics().density);
         LinearLayout.LayoutParams imgParams = new LinearLayout.LayoutParams(size, size);
         img.setLayoutParams(imgParams);
 
-        // 임시 이미지 (나중에 이미지 URL 넣으면 여기 수정 가능)
-        Glide.with(this)
-                .load("https://logo.clearbit.com/naver.com")
-                .into(img);
+        // ⛳ 이미지 파일 복사 (이미 있다면 생략됨)
+        ImageUtil.copyImageFromAssets(this, e.image);
+        File imageFile = new File(getFilesDir(), "earbud_images/" + e.image);
+        if (imageFile.exists()) {
+            Glide.with(this).load(imageFile).into(img);
+        } else {
+            Glide.with(this).load(R.drawable.no_image).into(img);
+        }
 
         // 이어폰 정보 텍스트
         TextView info = new TextView(this);
@@ -143,7 +148,7 @@ public class ResultActivity extends AppCompatActivity {
             card.setAlpha(0.6f);
         }
 
-        // 클릭 시 네이버 쇼핑 검색
+        // 네이버 쇼핑 링크 연결
         String keyword = e.name.replace(" ", "+");
         String url = "https://search.shopping.naver.com/search/all?query=" + keyword;
         info.setOnClickListener(v -> {

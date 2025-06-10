@@ -56,13 +56,21 @@ public class MainActivity extends AppCompatActivity {
 
         // ✅ JSON 파일 로딩 테스트 로그 출력
         EarbudData data = JsonLoader.loadJson(this);
+
         if (data != null) {
-            for (Earbud e : data.earbuds) {
-                Log.d("이어폰", e.name + " / 브랜드: " + e.brand);
+            if (data.earbuds != null) {
+                for (Earbud e : data.earbuds) {
+                    Log.d("이어폰", e.name);
+                }
             }
-            for (Question q : data.Q) {
-                Log.d("질문", q.question);
-            }
+
+            // 질문 데이터(Q)는 지금 JSON에 없으니까 이건 주석 처리하거나 생략
+            // if (data.Q != null) {
+            //     for (Question q : data.Q) {
+            //         Log.d("질문", q.question);
+            //     }
+            // }
         }
+
     }
 }
