@@ -1,20 +1,21 @@
 package com.example.t_sample;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnEarphoneList, btnStartTest, btnSearchActivity, btnRecentViewed;
+    CardView cardStartTest, cardEarphoneList, cardSearch, cardRecent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);  // XML 리디자인된 파일 그대로 사용
 
         // ✅ 시스템 네비게이션 바 항상 보이도록 설정
         View decorView = getWindow().getDecorView();
@@ -25,36 +26,35 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        setTitle("이어폰 추천 테스트");
+        // ✅ 카드뷰 연결
+        cardStartTest = findViewById(R.id.cardStartTest);
+        cardEarphoneList = findViewById(R.id.cardEarphoneList);
+        cardSearch = findViewById(R.id.cardSearch);
+        cardRecent = findViewById(R.id.cardRecent);
 
-        // 버튼 연결
-        btnEarphoneList = findViewById(R.id.btnEarphoneList);
-        btnStartTest = findViewById(R.id.btnStartTest);
-        btnSearchActivity = findViewById(R.id.btnSearchActivity);
-        btnRecentViewed = findViewById(R.id.btnRecentViewed); // ✅ 추가된 버튼
-
-        btnEarphoneList.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, EarphoneListActivity.class);
-            startActivity(intent);
-        });
-
-        btnStartTest.setOnClickListener(v -> {
+        // ✅ 클릭 이벤트 연결
+        cardStartTest.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, QuestionActivity.class);
             startActivity(intent);
         });
 
-        btnSearchActivity.setOnClickListener(v -> {
+        cardEarphoneList.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, EarphoneListActivity.class);
+            startActivity(intent);
+        });
+
+        cardSearch.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SearchActivity.class);
             startActivity(intent);
         });
 
-        btnRecentViewed.setOnClickListener(v -> {
+        cardRecent.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, EarphoneListActivity.class);
-            intent.putExtra("mode", "recent"); // ✅ recent 모드 전달
+            intent.putExtra("mode", "recent"); // recent 모드로 구분
             startActivity(intent);
         });
 
-        // JSON 테스트 로그 출력
+        // ✅ JSON 파일 로딩 테스트 로그 출력
         EarbudData data = JsonLoader.loadJson(this);
         if (data != null) {
             for (Earbud e : data.earbuds) {

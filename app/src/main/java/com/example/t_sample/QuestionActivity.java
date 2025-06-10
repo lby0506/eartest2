@@ -7,9 +7,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,14 +58,16 @@ public class QuestionActivity extends AppCompatActivity {
     private void showQuestion() {
         Question q = questions.get(currentIndex);
         tvQuestion.setText(q.question);
-
         radioGroup.removeAllViews();
+
         for (int i = 0; i < q.answers.size(); i++) {
             RadioButton rb = new RadioButton(this);
-            int answerId = View.generateViewId();  // 고유 ID 생성
-            rb.setId(answerId);
             rb.setText(q.answers.get(i).text);
-            rb.setTag(q.answers.get(i));  // Answer 객체를 tag로 저장
+            rb.setTextSize(16);
+            rb.setTextColor(getResources().getColor(R.color.black));
+            rb.setButtonTintList(getColorStateList(R.color.teal_700));
+            rb.setPadding(16, 32, 16, 32);
+            rb.setTag(q.answers.get(i));
             radioGroup.addView(rb);
         }
     }
