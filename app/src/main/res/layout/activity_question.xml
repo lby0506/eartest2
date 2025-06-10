@@ -6,7 +6,6 @@
     android:background="#F9FAFC"
     android:padding="24dp">
 
-    <!-- 질문 텍스트 -->
     <TextView
         android:id="@+id/tvQuestion"
         android:layout_width="match_parent"
@@ -19,7 +18,6 @@
         android:layout_marginTop="60dp"
         android:layout_marginBottom="36dp" />
 
-    <!-- 선택지 영역 (스크롤 포함) -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -34,18 +32,36 @@
             android:paddingHorizontal="8dp" />
     </ScrollView>
 
-    <!-- 다음 버튼 -->
-    <Button
-        android:id="@+id/btnNext"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="다음"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:textColor="#ffffff"
+        android:orientation="horizontal"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="36dp"
-        android:backgroundTint="#007B8A"
-        android:background="@drawable/rounded_cyan_button"
-        android:padding="16dp" />
+        android:layout_marginBottom="36dp">
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="이전"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_cyan_button"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="다음"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_cyan_button"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
 </LinearLayout>
