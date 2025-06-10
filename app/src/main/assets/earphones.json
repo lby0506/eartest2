@@ -24,7 +24,7 @@
         "20",
         "bean"
       ],
-      "image": "beats_studio_buds.jpg"
+      "image": "beats_studio_budsplus.jpg"
     },
     {
       "id": "e3",
@@ -304,7 +304,7 @@
         "30",
         "bean"
       ],
-      "image": "sony_wf1000xm5.jpg"
+      "image": "sony_wf-1000xm5.jpg"
     },
     {
       "id": "e24",
@@ -345,7 +345,7 @@
         "10",
         "bean"
       ],
-      "image": "sony_wfc710n.jpg"
+      "image": "sony_wf-c710n.jpg"
     },
     {
       "id": "e27",
@@ -358,7 +358,7 @@
         "5",
         "bean"
       ],
-      "image": "sony_wfc510.jpg"
+      "image": "sony_wf-c510.jpg"
     },
     {
       "id": "e28",
@@ -452,7 +452,7 @@
         "10",
         "bean"
       ],
-      "image": "audiotechnica_cks30tw.jpg"
+      "image": "audio-technica_cks50tw2.jpg"
     },
     {
       "id": "e35",
@@ -465,7 +465,7 @@
         "20",
         "bean"
       ],
-      "image": "audiotechnica_cks50tw2.jpg"
+      "image": "audio-technica_cks50tw2.jpg"
     },
     {
       "id": "e36",
@@ -479,7 +479,7 @@
         "20",
         "stem"
       ],
-      "image": "audiotechnica_twx7.jpg"
+      "image": "audio-technica_twx7.jpg"
     },
     {
       "id": "e37",
@@ -493,7 +493,7 @@
         "20",
         "stem"
       ],
-      "image": "audiotechnica_twx9.jpg"
+      "image": "audio-technica_twx9.jpg"
     },
     {
       "id": "e38",
@@ -507,7 +507,7 @@
         "10",
         "stem"
       ],
-      "image": "nothing_ear_2024.jpg"
+      "image": "nothing_ear_(2024).jpg"
     },
     {
       "id": "e39",
@@ -521,7 +521,7 @@
         "10",
         "stem"
       ],
-      "image": "nothing_ear_a.jpg"
+      "image": "nothing_ear_(a).jpg"
     },
     {
       "id": "e40",
@@ -575,7 +575,7 @@
         "30",
         "stem"
       ],
-      "image": "bo_beoplay_ex.jpg"
+      "image": "b&o_beoplay_ex.jpg"
     },
     {
       "id": "e44",
@@ -589,7 +589,7 @@
         "50",
         "stem"
       ],
-      "image": "bo_beoplay_e11.jpg"
+      "image": "b&o_beoplay_e11.jpg"
     },
     {
       "id": "e45",
@@ -603,7 +603,7 @@
         "30",
         "bean"
       ],
-      "image": "bw_pi7_s2.jpg"
+      "image": "b&w_pi7_s2.jpg"
     },
     {
       "id": "e46",
@@ -617,7 +617,7 @@
         "50",
         "bean"
       ],
-      "image": "bw_pi8.jpg"
+      "image": "b&w_pi8.jpg"
     },
     {
       "id": "e47",
@@ -631,7 +631,7 @@
         "30",
         "bean"
       ],
-      "image": "bw_pi6.jpg"
+      "image": "b&w_pi6.jpg"
     },
     {
       "id": "e48",
@@ -886,7 +886,7 @@
         "10",
         "bean"
       ],
-      "image": "ag_cotsubu_mk2.jpg"
+      "image": "ag_cotsubu_mk2plus.jpg"
     },
     {
       "id": "e67",
@@ -913,7 +913,7 @@
         "10",
         "stem"
       ],
-      "image": "lg_toneut90q.jpg"
+      "image": "lg_tone-ut90q.jpg"
     },
     {
       "id": "e69",
@@ -927,7 +927,7 @@
         "20",
         "bean"
       ],
-      "image": "lg_toneut90s.jpg"
+      "image": "lg_tone-ut90s.jpg"
     },
     {
       "id": "e70",
@@ -1109,7 +1109,7 @@
         "10",
         "open-ear"
       ],
-      "image": "shokz_openfit_air_t511.jpg"
+      "image": "shokz_open-fit_air_t511.jpg"
     },
     {
       "id": "e83",
@@ -1122,7 +1122,7 @@
         "20",
         "open-ear"
       ],
-      "image": "shokz_openfit_t910.jpg"
+      "image": "shokz_open-fit_t910.jpg"
     },
     {
       "id": "e84",
@@ -1135,7 +1135,7 @@
         "20",
         "open-ear"
       ],
-      "image": "shokz_openfit_t920.jpg"
+      "image": "shokz_open-fit_t920.jpg"
     },
     {
       "id": "e85",
@@ -1148,7 +1148,7 @@
         "5",
         "open-ear"
       ],
-      "image": "tozo_openbuds.jpg"
+      "image": "tozo_open-buds.jpg"
     },
     {
       "id": "e86",
