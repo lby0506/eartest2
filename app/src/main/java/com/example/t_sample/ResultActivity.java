@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 
@@ -35,6 +38,8 @@ public class ResultActivity extends AppCompatActivity {
         btnGoHome = findViewById(R.id.btnGoHome); // 버튼 초기화
 
         List<String> selectedFilters = getIntent().getStringArrayListExtra("filters");
+        List<String> selectedAnswersText = getIntent().getStringArrayListExtra("selectedAnswersText");
+
         EarbudData data = JsonLoader.loadJson(this);
 
         if (data != null) {
@@ -49,11 +54,20 @@ public class ResultActivity extends AppCompatActivity {
                 else selectedOtherFilters.add(filter);
             }
 
-            // 선택한 조건 출력
+            // ✅ 조건 설명 텍스트 (줄바꿈 + 문장 스타일)
             TextView header = new TextView(this);
-            header.setText("🧠 선택한 조건: " + String.join(", ", selectedFilters));
+            StringBuilder conditionText = new StringBuilder();
+            for (String answer : selectedAnswersText) {
+                conditionText.append("• ").append(answer).append("\n");
+            }
+            conditionText.append("\n👉 이런 당신에게 어울리는 이어폰을 추천합니다!");
+
+            header.setText(conditionText.toString());
             header.setTextSize(16);
-            header.setPadding(16, 16, 16, 32);
+            header.setPadding(32, 32, 32, 32);
+            header.setTextColor(ContextCompat.getColor(this, android.R.color.black));
+            header.setBackgroundResource(R.drawable.rounded_card_bg);
+            header.setLineSpacing(8f, 1.2f);
             header.setTypeface(null, Typeface.BOLD);
             resultLayout.addView(header);
 
@@ -108,38 +122,41 @@ public class ResultActivity extends AppCompatActivity {
                 TextView tv = new TextView(this);
                 tv.setText("🔍 정확히 일치하는 이어폰이 없습니다.\n아래는 유사한 추천입니다.");
                 tv.setTextSize(16);
-                tv.setPadding(16, 16, 16, 16);
+                tv.setPadding(24, 24, 24, 24);
                 tv.setTypeface(null, Typeface.BOLD);
                 resultLayout.addView(tv);
+
+
+                for (Earbud e : similarResults) {
+                    addResultCard(e, false);
+                }
             }
 
-            for (Earbud e : similarResults) {
-                addResultCard(e, false);
-            }
         }
     }
 
     private void addResultCard(Earbud e, boolean isExactMatch) {
         LinearLayout card = new LinearLayout(this);
         card.setOrientation(LinearLayout.HORIZONTAL);
-        card.setPadding(32, 32, 32, 32);
-        card.setBackgroundResource(android.R.drawable.dialog_holo_light_frame);
+        card.setPadding(24, 24, 24, 24);
+        card.setBackgroundResource(R.drawable.rounded_card_bg);
         card.setGravity(Gravity.CENTER_VERTICAL);
 
         LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         );
-        cardParams.setMargins(0, 0, 0, 32);
+        cardParams.setMargins(0, 24, 0, 0);
         card.setLayoutParams(cardParams);
 
-        // 이미지 복사 및 Glide 표시
+
         ImageView img = new ImageView(this);
-        int size = (int) (72 * getResources().getDisplayMetrics().density);
+        int size = (int) (64 * getResources().getDisplayMetrics().density);
         LinearLayout.LayoutParams imgParams = new LinearLayout.LayoutParams(size, size);
         img.setLayoutParams(imgParams);
+        img.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-        // 이미지 파일 복사 (이미 있다면 생략됨)
+
         ImageUtil.copyImageFromAssets(this, e.image);
         File imageFile = new File(getFilesDir(), "earbud_images/" + e.image);
         if (imageFile.exists()) {
@@ -148,18 +165,19 @@ public class ResultActivity extends AppCompatActivity {
             Glide.with(this).load(R.drawable.no_image).into(img);
         }
 
-        // 이어폰 정보 텍스트
+        String price = priceLabel(e.features);
+        String fullText = "🎧 " + e.name + "\n브랜드: " + e.brand + "\n💸 예상 가격대: " + price;
+
         TextView info = new TextView(this);
-        info.setText("🎧 " + e.name + "\n브랜드: " + e.brand + "\n예상 가격대: " + priceLabel(e.features));
-        info.setTextSize(14);
-        info.setPadding(32, 0, 0, 0);
-        info.setTextColor(getResources().getColor(android.R.color.black));
+        info.setText(fullText);
+        info.setTextSize(15);
+        info.setPadding(24, 0, 0, 0);
+        info.setTextColor(ContextCompat.getColor(this, android.R.color.black));
 
         if (!isExactMatch) {
             card.setAlpha(0.6f);
         }
 
-        // 네이버 쇼핑 링크 연결
         String keyword = e.name.replace(" ", "+");
         String url = "https://search.shopping.naver.com/search/all?query=" + keyword;
         info.setOnClickListener(v -> {

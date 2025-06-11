@@ -36,7 +36,6 @@ public class QuestionActivity extends AppCompatActivity {
         btnPrev    = findViewById(R.id.btnPrev);
         btnNext    = findViewById(R.id.btnNext);
 
-        // 질문 JSON 로드
         questions = JsonLoader.loadQuestions(this);
         if (questions.isEmpty()) {
             Toast.makeText(this, "질문 데이터가 없습니다.", Toast.LENGTH_SHORT).show();
@@ -44,7 +43,6 @@ public class QuestionActivity extends AppCompatActivity {
             return;
         }
 
-        // 선택답 리스트 초기화
         selectedAnswers = new ArrayList<>();
         for (int i = 0; i < questions.size(); i++) {
             selectedAnswers.add(null);
@@ -73,27 +71,30 @@ public class QuestionActivity extends AppCompatActivity {
             if (currentIndex < questions.size()) {
                 showQuestion();
             } else {
-                // QA 문자열 리스트 생성
+                // QA 텍스트 리스트
                 ArrayList<String> qaList = new ArrayList<>();
-                for (int i = 0; i < questions.size(); i++) {
-                    String q = questions.get(i).question;
-                    Answer a = selectedAnswers.get(i);
-                    String aText = (a != null ? a.text : "선택 없음");
-                    qaList.add(q + "\n→ " + aText);
-                }
-                // 필터 리스트 생성
+                // 필터 리스트
                 ArrayList<String> filters = new ArrayList<>();
-                for (Answer a : selectedAnswers) {
+                // 선택한 답변 텍스트 리스트 (ResultActivity에서 조건 문장용)
+                ArrayList<String> selectedAnswersText = new ArrayList<>();
+
+                for (int i = 0; i < questions.size(); i++) {
+                    Answer a = selectedAnswers.get(i);
                     if (a != null) {
+                        qaList.add(questions.get(i).question + "\n→ " + a.text);
+                        selectedAnswersText.add(a.text);
                         for (String f : a.filters) {
                             if (!filters.contains(f)) filters.add(f);
                         }
+                    } else {
+                        qaList.add(questions.get(i).question + "\n→ 선택 없음");
                     }
                 }
-                // 결과 화면으로 이동
+
                 Intent intent = new Intent(this, ResultActivity.class);
                 intent.putStringArrayListExtra("qaList", qaList);
                 intent.putStringArrayListExtra("filters", filters);
+                intent.putStringArrayListExtra("selectedAnswersText", selectedAnswersText); // ✅ 추가
                 startActivity(intent);
                 finish();
             }
