@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ import java.util.List;
 public class ResultActivity extends AppCompatActivity {
 
     private LinearLayout resultLayout;
+    private Button btnGoHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         resultLayout = findViewById(R.id.resultLayout);
+        btnGoHome = findViewById(R.id.btnGoHome); // 버튼 초기화
 
         List<String> selectedFilters = getIntent().getStringArrayListExtra("filters");
         EarbudData data = JsonLoader.loadJson(this);
@@ -53,6 +56,14 @@ public class ResultActivity extends AppCompatActivity {
             header.setPadding(16, 16, 16, 32);
             header.setTypeface(null, Typeface.BOLD);
             resultLayout.addView(header);
+
+            // 홈으로 돌아가는 버튼 클릭 리스너
+            btnGoHome.setOnClickListener(v -> {
+                Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK); // 현재 스택 비우고 새 태스크 시작
+                startActivity(intent);
+                finish(); // 현재 액티비티 종료
+            });
 
             boolean hasMatch = false;
             List<Earbud> similarResults = new ArrayList<>();
@@ -87,13 +98,9 @@ public class ResultActivity extends AppCompatActivity {
                     for (String f : selectedFilters) {
                         if (features.contains(f)) matchCount++;
                     }
-                    int threshold = Math.max(3, (int)(selectedFilters.size() * 0.5));
-                    if (matchCount >= threshold) {
+                    if (matchCount >= selectedFilters.size() / 2) {
                         similarResults.add(e);
                     }
-
-
-
                 }
             }
 
@@ -104,14 +111,11 @@ public class ResultActivity extends AppCompatActivity {
                 tv.setPadding(16, 16, 16, 16);
                 tv.setTypeface(null, Typeface.BOLD);
                 resultLayout.addView(tv);
-
-                // 유사 추천 결과만 출력
-                for (Earbud e : similarResults) {
-                    addResultCard(e, false);
-                }
-
             }
 
+            for (Earbud e : similarResults) {
+                addResultCard(e, false);
+            }
         }
     }
 
@@ -129,13 +133,13 @@ public class ResultActivity extends AppCompatActivity {
         cardParams.setMargins(0, 0, 0, 32);
         card.setLayoutParams(cardParams);
 
-        // ✅ 이미지 복사 및 Glide 표시
+        // 이미지 복사 및 Glide 표시
         ImageView img = new ImageView(this);
         int size = (int) (72 * getResources().getDisplayMetrics().density);
         LinearLayout.LayoutParams imgParams = new LinearLayout.LayoutParams(size, size);
         img.setLayoutParams(imgParams);
 
-        // ⛳ 이미지 파일 복사 (이미 있다면 생략됨)
+        // 이미지 파일 복사 (이미 있다면 생략됨)
         ImageUtil.copyImageFromAssets(this, e.image);
         File imageFile = new File(getFilesDir(), "earbud_images/" + e.image);
         if (imageFile.exists()) {
