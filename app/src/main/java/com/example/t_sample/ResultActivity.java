@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 
@@ -47,21 +51,18 @@ public class ResultActivity extends AppCompatActivity {
                 else selectedOtherFilters.add(filter);
             }
 
-            // ⬇ 조건 설명 문구 - 카드 스타일
+            // ✅ 조건 설명 텍스트 (줄바꿈 + 문장 스타일)
             TextView header = new TextView(this);
             StringBuilder conditionText = new StringBuilder();
-            for (int i = 0; i < selectedAnswersText.size(); i++) {
-                conditionText.append(selectedAnswersText.get(i));
-                if (i < selectedAnswersText.size() - 1) {
-                    conditionText.append(", ");
-                }
+            for (String answer : selectedAnswersText) {
+                conditionText.append("• ").append(answer).append("\n");
             }
-            conditionText.append(" 당신에게는 이런 이어폰이 어울려요!");
+            conditionText.append("\n👉 이런 당신에게 어울리는 이어폰을 추천합니다!");
 
             header.setText(conditionText.toString());
             header.setTextSize(16);
             header.setPadding(32, 32, 32, 32);
-            header.setTextColor(getResources().getColor(android.R.color.black));
+            header.setTextColor(ContextCompat.getColor(this, android.R.color.black));
             header.setBackgroundResource(R.drawable.rounded_card_bg);
             header.setLineSpacing(8f, 1.2f);
             header.setTypeface(null, Typeface.BOLD);
@@ -133,7 +134,7 @@ public class ResultActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         );
-        cardParams.setMargins(0, 24, 0, 0); // 카드 간 간격
+        cardParams.setMargins(0, 24, 0, 0);
         card.setLayoutParams(cardParams);
 
         ImageView img = new ImageView(this);
@@ -150,11 +151,14 @@ public class ResultActivity extends AppCompatActivity {
             Glide.with(this).load(R.drawable.no_image).into(img);
         }
 
+        String price = priceLabel(e.features);
+        String fullText = "🎧 " + e.name + "\n브랜드: " + e.brand + "\n💸 예상 가격대: " + price;
+
         TextView info = new TextView(this);
-        info.setText("🎧 " + e.name + "\n브랜드: " + e.brand + "\n예상 가격대: " + priceLabel(e.features));
+        info.setText(fullText);
         info.setTextSize(15);
         info.setPadding(24, 0, 0, 0);
-        info.setTextColor(getResources().getColor(android.R.color.black));
+        info.setTextColor(ContextCompat.getColor(this, android.R.color.black));
 
         if (!isExactMatch) {
             card.setAlpha(0.6f);
