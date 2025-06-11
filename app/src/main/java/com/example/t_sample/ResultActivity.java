@@ -87,9 +87,13 @@ public class ResultActivity extends AppCompatActivity {
                     for (String f : selectedFilters) {
                         if (features.contains(f)) matchCount++;
                     }
-                    if (matchCount >= selectedFilters.size() / 2) {
+                    int threshold = Math.max(3, (int)(selectedFilters.size() * 0.5));
+                    if (matchCount >= threshold) {
                         similarResults.add(e);
                     }
+
+
+
                 }
             }
 
@@ -100,11 +104,14 @@ public class ResultActivity extends AppCompatActivity {
                 tv.setPadding(16, 16, 16, 16);
                 tv.setTypeface(null, Typeface.BOLD);
                 resultLayout.addView(tv);
+
+                // 유사 추천 결과만 출력
+                for (Earbud e : similarResults) {
+                    addResultCard(e, false);
+                }
+
             }
 
-            for (Earbud e : similarResults) {
-                addResultCard(e, false);
-            }
         }
     }
 
