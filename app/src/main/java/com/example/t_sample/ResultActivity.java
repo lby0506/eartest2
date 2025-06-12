@@ -112,7 +112,7 @@ public class ResultActivity extends AppCompatActivity {
                     for (String f : selectedFilters) {
                         if (features.contains(f)) matchCount++;
                     }
-                    if (matchCount >= selectedFilters.size() / 2) {
+                    if (matchCount >= selectedFilters.size() * 0.6) {
                         similarResults.add(e);
                     }
                 }
