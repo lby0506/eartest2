@@ -28,6 +28,7 @@ public class EarphoneListActivity extends AppCompatActivity {
     LinearLayout earphoneListLayout;
     private boolean showFavoritesOnly = false;
     private EarbudData fullData;
+    private String currentMode = "";  // 현재 모드 ("recent" 또는 "")
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,34 +44,49 @@ public class EarphoneListActivity extends AppCompatActivity {
         if (fullData == null) return;
 
         Intent intent = getIntent();
-        String mode = intent.getStringExtra("mode");
+        currentMode = intent.getStringExtra("mode"); // recent 모드인지 확인
 
-        if (mode != null && mode.equals("recent")) {
+        List<Earbud> baseList;
+        if ("recent".equals(currentMode)) {
             List<String> recentIds = loadRecentlyViewed();
-            List<Earbud> recentList = new ArrayList<>();
+            baseList = new ArrayList<>();
             for (Earbud e : fullData.earbuds) {
                 if (recentIds.contains(e.id)) {
-                    recentList.add(e);
+                    baseList.add(e);
                 }
             }
-            renderEarbuds(recentList);
         } else {
-            renderEarbuds(fullData.earbuds);
+            baseList = fullData.earbuds;
         }
+
+        renderEarbuds(baseList);
 
         btnToggleFavorites.setOnClickListener(v -> {
             showFavoritesOnly = !showFavoritesOnly;
+
+            List<Earbud> baseListToggle;
+            if ("recent".equals(currentMode)) {
+                List<String> recentIds = loadRecentlyViewed();
+                baseListToggle = new ArrayList<>();
+                for (Earbud e : fullData.earbuds) {
+                    if (recentIds.contains(e.id)) {
+                        baseListToggle.add(e);
+                    }
+                }
+            } else {
+                baseListToggle = fullData.earbuds;
+            }
 
             List<Earbud> filtered;
             if (showFavoritesOnly) {
                 btnToggleFavorites.setText("전체 보기");
                 filtered = new ArrayList<>();
-                for (Earbud e : fullData.earbuds) {
+                for (Earbud e : baseListToggle) {
                     if (e.isFavorite()) filtered.add(e);
                 }
             } else {
                 btnToggleFavorites.setText("즐겨찾기만 보기");
-                filtered = fullData.earbuds;
+                filtered = baseListToggle;
             }
 
             renderEarbuds(filtered);
@@ -98,10 +114,8 @@ public class EarphoneListActivity extends AppCompatActivity {
             brand.setVisibility(View.GONE);
             info.setText("네이버 최저가 보기");
 
-            // ✅ 이미지 assets → 내부 저장소로 복사
             ImageUtil.copyImageFromAssets(this, e.image);
 
-            // ✅ 내부 저장소 경로에서 Glide로 불러오기
             File imgFile = new File(getFilesDir(), "earbud_images/" + e.image);
             if (imgFile.exists()) {
                 Glide.with(this).load(imgFile).into(imageView);
@@ -109,8 +123,8 @@ public class EarphoneListActivity extends AppCompatActivity {
                 Glide.with(this).load(R.drawable.no_image).into(imageView);
             }
 
-            String keyword = e.name.replace(" ", "+");
-            String link = "https://search.shopping.naver.com/search/all?query=" + keyword;
+            String keyword = Uri.encode(e.name);
+            String link = "https://m.shopping.naver.com/search/all?query=" + keyword;
 
             card.setOnClickListener(v -> {
                 saveRecentlyViewed(e.id);
@@ -146,7 +160,7 @@ public class EarphoneListActivity extends AppCompatActivity {
 
                 if (showFavoritesOnly) {
                     List<Earbud> filtered = new ArrayList<>();
-                    for (Earbud eb : fullData.earbuds) {
+                    for (Earbud eb : earbuds) {
                         if (eb.isFavorite()) filtered.add(eb);
                     }
                     renderEarbuds(filtered);
