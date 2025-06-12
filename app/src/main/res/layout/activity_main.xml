@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8"
+    android:background="#F5F8FE"
     android:padding="0dp">
 
     <LinearLayout
@@ -16,22 +16,34 @@
         <!-- 앱 로고 -->
         <ImageView
             android:id="@+id/logoImage"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/eartest"
             android:layout_marginTop="48dp"
-            android:layout_marginBottom="32dp"
-            android:contentDescription="@string/app_logo" />
+            android:layout_marginBottom="12dp"
+            android:contentDescription="@string/app_logo"
+            android:elevation="4dp" />
 
-        <!-- 카드형 버튼 스타일 -->
+        <!-- 앱 이름 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EarTest"
+            android:textSize="22sp"
+            android:textColor="#2A2A2A"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp" />
+
+        <!-- 카드 버튼 공통 스타일 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardStartTest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:cardCornerRadius="24dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="8dp"
-            android:backgroundTint="#FFFFFF">
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,18 +53,18 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:src="@drawable/ic_test"
-                    android:tint="#4DB8FF" />
+                    android:tint="#4A90E2"
+                    android:layout_marginEnd="16dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="테스트 시작"
                     android:textSize="17sp"
-                    android:layout_marginStart="16dp"
-                    android:textColor="#222222" />
+                    android:textColor="#1A1A1A" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -60,10 +72,11 @@
             android:id="@+id/cardEarphoneList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:cardCornerRadius="24dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="8dp"
-            android:backgroundTint="#FFFFFF">
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,18 +86,18 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:src="@drawable/ic_list"
-                    android:tint="#4DB8FF" />
+                    android:tint="#4A90E2"
+                    android:layout_marginEnd="16dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="추천 이어폰 리스트"
                     android:textSize="17sp"
-                    android:layout_marginStart="16dp"
-                    android:textColor="#222222" />
+                    android:textColor="#1A1A1A" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -92,10 +105,11 @@
             android:id="@+id/cardSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:cardCornerRadius="24dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="8dp"
-            android:backgroundTint="#FFFFFF">
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,18 +119,18 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:src="@drawable/ic_search"
-                    android:tint="#4DB8FF" />
+                    android:tint="#4A90E2"
+                    android:layout_marginEnd="16dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="이어폰 검색"
                     android:textSize="17sp"
-                    android:layout_marginStart="16dp"
-                    android:textColor="#222222" />
+                    android:textColor="#1A1A1A" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -124,10 +138,11 @@
             android:id="@+id/cardRecent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            app:cardCornerRadius="24dp"
+            android:layout_marginBottom="48dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="8dp"
-            android:backgroundTint="#FFFFFF">
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -137,18 +152,18 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:src="@drawable/ic_recent"
-                    android:tint="#4DB8FF" />
+                    android:tint="#4A90E2"
+                    android:layout_marginEnd="16dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="최근 본 이어폰"
                     android:textSize="17sp"
-                    android:layout_marginStart="16dp"
-                    android:textColor="#222222" />
+                    android:textColor="#1A1A1A" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

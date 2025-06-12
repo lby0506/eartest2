@@ -4,29 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FAFDFC"
-    android:padding="16dp">
+    android:background="#F5F8FE"
+    android:padding="20dp">
 
-    <!-- 즐겨찾기만 보기 버튼 (ScrollView 밖으로 분리) -->
-    <Button
-        android:id="@+id/btnToggleFavorites"
-        android:layout_width="wrap_content"
+    <!-- 상단 필터 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="즐겨찾기만 보기"
-        android:textSize="16sp"
-        android:layout_gravity="end"
-        android:layout_marginBottom="8dp" />
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnToggleFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="❤️ 즐겨찾기만 보기"
+            android:textSize="15sp"
+            android:backgroundTint="#4A90E2"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/rounded_cyan_button" />
+    </LinearLayout>
 
     <!-- 이어폰 카드 리스트 -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:id="@+id/earphoneListLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical"
+            android:divider="@android:color/transparent"
+            android:showDividers="middle"
+            android:dividerPadding="12dp" />
     </ScrollView>
 </LinearLayout>

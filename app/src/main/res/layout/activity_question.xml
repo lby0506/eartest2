@@ -3,21 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F9FAFC"
+    android:background="#F5F8FE"
     android:padding="24dp">
 
+    <!-- 질문 텍스트 -->
     <TextView
         android:id="@+id/tvQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="질문"
-        android:textSize="20sp"
-        android:textColor="#212121"
+        android:text="당신의 취향은 무엇인가요?"
+        android:textSize="22sp"
+        android:textColor="#1A1A1A"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="36dp" />
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="32dp" />
 
+    <!-- 선택지 영역 -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -29,9 +31,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="8dp" />
+            android:divider="@android:color/transparent"
+            android:showDividers="middle"
+            android:dividerPadding="16dp"
+            android:paddingHorizontal="4dp" />
     </ScrollView>
 
+    <!-- 하단 버튼 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +48,7 @@
         <Button
             android:id="@+id/btnPrev"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_weight="1"
             android:text="이전"
             android:textAllCaps="false"
@@ -54,7 +60,7 @@
         <Button
             android:id="@+id/btnNext"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_weight="1"
             android:text="다음"
             android:textAllCaps="false"
